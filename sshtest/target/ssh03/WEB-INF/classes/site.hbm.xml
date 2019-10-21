@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="net.sshtest.entity.Site" table="siteinfo">
+    <id name="site_id" column="site_id">
+        <generator class="native"></generator>
+    </id>
+
+    <property name="site_name"/>
+    <property name="site_type"/>
+    <property name="site_location"/>
+    <property name="site_mrentprice"/>
+    <many-to-one name="state" column="state" class="net.sshtest.entity.StateInfo" lazy="false" />
+    </class>
+</hibernate-mapping>

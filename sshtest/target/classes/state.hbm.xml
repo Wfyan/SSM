@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="net.sshtest.entity.StateInfo" table="stateinfo">
+        <id name="state" column="state">
+            <generator class="assigned"></generator>
+        </id>
+
+        <property name="name"/><!--字段名因为和表中相同所以可以省略column-->
+    </class>
+</hibernate-mapping>

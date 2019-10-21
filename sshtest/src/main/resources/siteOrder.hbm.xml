@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="net.sshtest.entity.SiteOrder" table="siteorder">
+        <id name="sorder_id" column="sorder_id">
+            <generator class="native"></generator>
+        </id>
+
+        <property name="site_rent_star_time"/>
+        <property name="order_time"/>
+        <property name="rent_time"/>
+
+
+        <many-to-one name="userid" column="userid" class="net.sshtest.entity.User" lazy="false"></many-to-one>
+        <many-to-one name="state" column="state" class="net.sshtest.entity.StateInfo" lazy="false"></many-to-one>
+        <many-to-one name="site_id" column="site_id" class="net.sshtest.entity.Site" lazy="false"></many-to-one>
+
+
+
+
+
+
+    </class>
+</hibernate-mapping>

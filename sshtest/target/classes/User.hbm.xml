@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">        
+<hibernate-mapping>
+    <class name="net.sshtest.entity.User" table="USER">
+        <id name="userid" type="int" column="USERID">
+            <generator class="native" />
+        </id>
+        <property name="username" type="string" column="USERNAME" />
+		<property name="password" type="string" column="PASSWORD"/>
+		<property name="gender" type="string" column="GENDER" />
+		<property name="birthplace" type="string" column="BIRTHPLACE" />
+		<property name="phoneNumber" type="string" column="PHONENUMBER" />
+		<property name="email" type="string" column="EMAIL" />
+		<property name="realNameAuthenticationid" type="int" column="REAL_NAME_AUTHENTICATIONID" />
+		<property name="registDate" type="string" column="REGISTDATE" />
+		<many-to-one name="state" column="STATE" class="net.sshtest.entity.StateInfo" lazy="false"/>
+		<many-to-one name="roleid" column="ROLEID" class="net.sshtest.entity.Role" lazy="false"/>
+
+
+
+    </class>
+</hibernate-mapping>

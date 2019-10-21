@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">        
+<hibernate-mapping>
+    <class name="net.sshtest.entity.Announcement" table="ANNOUNCEMENT">
+        <id name="announcementid" type="int" column="ANNOUNCEMENTID">
+            <generator class="native" />
+        </id>
+        <property name="announcementTitle" type="string" column="ANNOUNCEMENT_TITLE" />
+		<property name="announcementDetail" type="string" column="ANNOUNCEMENT_DETAIL"/>
+		<property name="announcementTime" type="string" column="ANNOUNCEMENT_TIME" />
+		<many-to-one name="userid" column="userid" class="net.sshtest.entity.User" lazy="false" />
+
+    </class>
+</hibernate-mapping>

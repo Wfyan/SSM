@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="net.sshtest.entity.Equipment" table="equipmentinfo">
+        <id name="e_id" column="e_id">
+            <generator class="assigned"></generator>
+        </id>
+
+        <property name="name"/><!--字段名因为和表中相同所以可以省略column-->
+        <property name="kind"/>
+        <property name="buy_price" not-null="false"/>
+        <property name="rent_price" not-null="false"/>
+        <property name="buy_date" not-null="false"/>
+
+        <many-to-one name="state" column="state" class="net.sshtest.entity.StateInfo" lazy="false" />
+        <many-to-one name="place" column="place_id" class="net.sshtest.entity.Place" lazy="false" />
+
+    </class>
+</hibernate-mapping>

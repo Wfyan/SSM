@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="net.sshtest.entity.EquipmentOrder" table="equipmentorder">
+        <id name="order_id" column="order_id">
+            <generator class="assigned"></generator>
+        </id>
+
+        <property name="use_time"/>
+        <property name="order_date" not-null="false"/>
+        <property name="end_time" not-null="false"/>
+        <property name="rent_time"/>
+        <property name="total"/>
+        <many-to-one name="equipment" column="e_id" class="net.sshtest.entity.Equipment"  lazy="false"/>
+        <many-to-one name="user" class="net.sshtest.entity.User" lazy="false">
+            <column name="userid"/>
+        </many-to-one>
+        <many-to-one name="state" column="state" class="net.sshtest.entity.StateInfo"  lazy="false"/>
+
+    </class>
+</hibernate-mapping>

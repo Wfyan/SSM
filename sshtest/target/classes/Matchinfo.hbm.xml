@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">        
+<hibernate-mapping>
+    <class name="net.sshtest.entity.Matchinfo" table="MATCHINFO">
+        <id name="matchid" type="int" column="MATCH_ID">
+            <generator class="native" />
+        </id>
+        <property name="matchTime" type="string" column="MATCH_TIME" />
+        <property name="matchPerson" type="string" column="MATCH_PERSON" />
+        <property name="matchName" type="string" column="MATCH_NAME" />
+        <property name="matchState" type="int" column="MATCH_STATE" />
+        <many-to-one name="equipmentid" column="e_id" class="net.sshtest.entity.Equipment" lazy="false" />
+        <many-to-one name="state" column="state" class="net.sshtest.entity.StateInfo" lazy="false" />
+        <many-to-one name="userid" column="userid" class="net.sshtest.entity.User" lazy="false" />
+        <many-to-one name="siteid" column="site_id" class="net.sshtest.entity.Site" lazy="false" />
+
+    </class>
+</hibernate-mapping>
